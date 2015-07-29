@@ -21,7 +21,7 @@
                 'borderColor':'#BCE8F1', //容器边框颜色
                 'position':'center', //容器对齐方式  left center right
                 'maxWidth':'200px', //容器最大宽度
-                'top':5,  //容器top
+                'top':8,  //容器top
                 'zIndex': 888,
 
                 //信息外层 notifyWarpper
@@ -92,22 +92,26 @@
                     .addClass(_this.setting.className).hide();
 
                 _this.closeButton =
-                    $('<button class="notify-close ">x</button>').css({
+                    $('<span class="notify-close ">x</span>').css({
                         'position':'absolute',
-                        'right':'-4px',
-                        'top':'-4px',
-                        'height':'22px',
+                        'right':'0px',
+                        'top':'0px',
+                        'height':'16px',
                         'background':'none',
                         'border':'none',
                         'cursor':'pointer',
-                        'font-size': '18px',
+                        'font-size': '14px',
                         'color':' #666',
                         'display':'block',
-                        'text-shadow': '0px 1px 0px #FFF'
+                        'text-shadow': '0px 1px 0px #FFF',
+                        'border-radius':'50%',
+                        'width':'16px',
+                        'line-height':'16px',
+                        'padding':'0'
 
                     });
 
-                _this.notifyMessage = $('<div></div>').html(_this.setting.message+_this.notifyContainerNum);
+                _this.notifyMessage = $('<div></div>').html(_this.setting.message);
 
 
                 _this.notifyWarpper = $('<div class="notify-wrapper"></div>')
@@ -268,6 +272,20 @@
 
                 _this.notifyContainer.css({'border':'1px solid '+borderColor,'background-color':backgroundColor,'color':fontColor});
 
+                return _this;
+            };
+
+            /**
+             * 设置圆角关闭按钮
+             */
+            _this.setCloseButtonRadius = function(){
+
+                _this.closeButton.css({
+                    'background':'#ffffff',
+                    'border':'1px solid #ccc',
+                    'right':'-8px',
+                    'top':'-8px'
+                });
                 return _this;
             };
 

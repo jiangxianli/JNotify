@@ -78,6 +78,9 @@
        //改变主题颜色 (borderColor,backgroundColor,fontColor)
        jNotify.setThemeColor('#BCE8F1','#D9EDF7','#31708F');
 
+       //设置圆角关闭按钮
+       jNotify.setCloseButtonRadius();
+
 
 
 
