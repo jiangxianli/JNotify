@@ -1,0 +1,19 @@
+{
+  "name": "jquery-jnotify",
+  "version": "0.0.0",
+  "authors": [
+    "root <997204035@qq.com>"
+  ],
+  "description": "消息提示",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.6"
+  }
+}
