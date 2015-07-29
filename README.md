@@ -4,34 +4,38 @@
 
 ## 参数
 
-    ```json
-        {
+    ```js
+        $(function(){
+            var defaults = {
+            
+                // 容器 notifyContainer
+                'className':'JNotify-danger', //容器 notifyContainer附加类名
+                'theme':null,  // 主题 “success”、“error”、“warning”、“info”
+                'backgroundColor':'#D9EDF7', //容器背景颜色
+                'borderColor':'#BCE8F1', //容器边框颜色
+                'position':'center', //容器对齐方式  left center right
+                'maxWidth':'200px', //容器最大宽度
+                'top':5,  //容器top
+                'zIndex': 888,
+        
+                //信息外层 notifyWarpper
+                'padding':'15px', //信息内容外部Wrapper内边距
+        
+                //信息内容 notifyMessage
+                'message':'尊敬的用户您的手机已欠费，请即时续缴话费', //显示的信息内容
+                'fontSize':'14px',  //信息内容字体大小
+                'fontColor': '#31708F', //信息内容字体颜色
+        
+                //关闭按钮 closeButton
+                'autoClose':false,  //是否自动关闭
+                'showCloseButton':true,  //是否显示关闭按钮
+                'showDuration':5000,  //显示时长  设置自动关闭时才有效
+                'closeDuration':1000  //关闭延时  设置自动关闭时才有效
+            };
+        
+        });
+        
     
-            // 容器 notifyContainer
-            'className':'JNotify-danger', //容器 notifyContainer附加类名
-            'theme':null,  // 主题 “success”、“error”、“warning”、“info”
-            'backgroundColor':'#D9EDF7', //容器背景颜色
-            'borderColor':'#BCE8F1', //容器边框颜色
-            'position':'center', //容器对齐方式  left center right
-            'maxWidth':'200px', //容器最大宽度
-            'top':5,  //容器top
-            'zIndex': 888,
-    
-            //信息外层 notifyWarpper
-            'padding':'15px', //信息内容外部Wrapper内边距
-    
-            //信息内容 notifyMessage
-            'message':'尊敬的用户您的手机已欠费，请即时续缴话费', //显示的信息内容
-            'fontSize':'14px',  //信息内容字体大小
-            'fontColor': '#31708F', //信息内容字体颜色
-    
-            //关闭按钮 closeButton
-            'autoClose':false,  //是否自动关闭
-            'showCloseButton':true,  //是否显示关闭按钮
-            'showDuration':5000,  //显示时长  设置自动关闭时才有效
-            'closeDuration':1000  //关闭延时  设置自动关闭时才有效
-    
-        }
 
     ```
 
