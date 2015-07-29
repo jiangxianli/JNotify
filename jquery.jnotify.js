@@ -16,7 +16,7 @@
 
                 // 容器 notifyContainer
                 'className':'JNotify-danger', //容器 notifyContainer附加类名
-                'theme':null,  // 主题 “success”、“error”、“warning”、“info”
+                'theme':'error',  // 主题 “success”、“error”、“warning”、“info”
                 'backgroundColor':'#D9EDF7', //容器背景颜色
                 'borderColor':'#BCE8F1', //容器边框颜色
                 'position':'center', //容器对齐方式  left center right
@@ -85,6 +85,7 @@
                         'color':_this.setting.fontColor,
                         'background-color':_this.setting.backgroundColor,
                         'border-radius':'5px',
+                        'width':'100%',
                         'max-width':_this.setting.maxWidth,
                         'text-align':'center',
                         'z-index':_this.setting.zIndex
@@ -107,7 +108,8 @@
                         'border-radius':'50%',
                         'width':'16px',
                         'line-height':'16px',
-                        'padding':'0'
+                        'padding':'0',
+                        'font-weight':'normal'
 
                     });
 
@@ -288,6 +290,43 @@
                 });
                 return _this;
             };
+
+            /**
+             * 设置宽度
+             * @param width
+             */
+            _this.setWidth = function(width){
+
+                _this.notifyContainer.css({'width':width,'max-width':''})
+
+                return _this;
+            };
+
+            /**
+             * 设置高度
+             * @param height
+             */
+            _this.setHeight = function(height){
+
+                _this.notifyContainer.css({'height':height})
+
+                return _this;
+            };
+
+            /**
+             * 设置关闭按钮offset top
+             * @param top
+             * @returns {*}
+             */
+            _this.setCloseButtonTop = function(top){
+
+                _this.closeButton.css({'top':top})
+
+                return _this;
+
+            };
+
+
 
             _this.init().setPosition().showCloseButton().autoClose().bindCloseEvent().setTheme();
 

@@ -86,6 +86,15 @@
        //设置圆角关闭按钮
        jNotify.setCloseButtonRadius();
 
+       //设置关闭按钮offset top
+       jNotify.setCloseButtonTop(10);
+
+       //设置宽度
+       jNotify.setWidth('100%');
+
+       //设置宽度
+       jNotify.setHeight('130px');
+
 
 
 
