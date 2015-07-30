@@ -11,13 +11,16 @@
 
         // 容器 notifyContainer
         'className':'JNotify-danger', //容器 notifyContainer附加类名
-        'theme':null,  // 主题 “success”、“error”、“warning”、“info”
+        'theme':'error',  // 主题 “success”、“error”、“warning”、“info”
         'backgroundColor':'#D9EDF7', //容器背景颜色
         'borderColor':'#BCE8F1', //容器边框颜色
+        'borderRadius':'3px',   //容器边框圆角
         'position':'center', //容器对齐方式  left center right
-        'maxWidth':'200px', //容器最大宽度
-        'top':5,  //容器top
+        'maxWidth':'250px', //容器最大宽度
+        'top':8,  //容器top
         'zIndex': 888,
+        'height':null,  //容器固定高度
+
 
         //信息外层 notifyWarpper
         'padding':'15px', //信息内容外部Wrapper内边距
@@ -43,7 +46,7 @@
 
 环境要求：Jquery     >= 1.6
 
-1. bower install bower install jquery-jnotify 或 下载源码[jquery.jnotify.js](https://github.com/997204035/JNotify/blob/master/jquery.jnotify.js)
+1. bower install jquery-jnotify 或 下载源码[jquery.jnotify.js](https://github.com/997204035/JNotify/blob/master/jquery.jnotify.js)
 
 
 2.在页面上引入 jquery 和 jquery-jnotify两个js文件
@@ -92,8 +95,8 @@
        //设置宽度
        jNotify.setWidth('100%');
 
-       //设置宽度
-       jNotify.setHeight('130px');
+       //设置高度
+       jNotify.setHeight(130);
 
 
 
