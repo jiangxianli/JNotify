@@ -19,10 +19,13 @@
                 'theme':'error',  // 主题 “success”、“error”、“warning”、“info”
                 'backgroundColor':'#D9EDF7', //容器背景颜色
                 'borderColor':'#BCE8F1', //容器边框颜色
+                'borderRadius':'3px',   //容器边框圆角
                 'position':'center', //容器对齐方式  left center right
-                'maxWidth':'200px', //容器最大宽度
+                'maxWidth':'250px', //容器最大宽度
                 'top':8,  //容器top
                 'zIndex': 888,
+                'height':null,  //容器固定高度
+
 
                 //信息外层 notifyWarpper
                 'padding':'15px', //信息内容外部Wrapper内边距
@@ -84,13 +87,15 @@
                         'fontSize':_this.setting.fontSize,
                         'color':_this.setting.fontColor,
                         'background-color':_this.setting.backgroundColor,
-                        'border-radius':'5px',
+                        'border-radius':_this.setting.borderRadius,
                         'width':'100%',
                         'max-width':_this.setting.maxWidth,
                         'text-align':'center',
-                        'z-index':_this.setting.zIndex
+                        'z-index':_this.setting.zIndex,
+                        'display':'none',
+                        'overflow':'hidden'
                     })
-                    .addClass(_this.setting.className).hide();
+                    .addClass(_this.setting.className);
 
                 _this.closeButton =
                     $('<span class="notify-close ">x</span>').css({
@@ -113,7 +118,7 @@
 
                     });
 
-                _this.notifyMessage = $('<div></div>').html(_this.setting.message);
+                _this.notifyMessage = $('<div class="notify-message"></div>').html(_this.setting.message);
 
 
                 _this.notifyWarpper = $('<div class="notify-wrapper"></div>')
@@ -132,7 +137,7 @@
 
                 $('body').append(_this.notifyContainer);
 
-                _this.notifyContainer.slideDown(200);
+                _this.notifyContainer.fadeIn();
 
                 return _this;
             };
@@ -308,7 +313,10 @@
              */
             _this.setHeight = function(height){
 
-                _this.notifyContainer.css({'height':height})
+                _this.setting.height = _this.setDefaultValue(_this.setting.height,height);
+
+                _this.notifyContainer.css({'height':_this.setting.height,'line-height':_this.setting.height+'px'})
+                _this.notifyWarpper.css({'padding':''})
 
                 return _this;
             };
@@ -329,6 +337,10 @@
 
 
             _this.init().setPosition().showCloseButton().autoClose().bindCloseEvent().setTheme();
+
+            if(_this.setting.height != null){
+                _this.setHeight();
+            }
 
             return _this;
 
