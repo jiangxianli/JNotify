@@ -78,7 +78,7 @@
             _this.init = function(){
 
 
-                _this.notifyContainer = $('<div class="notifyContainer " ></div>')
+                _this.notifyContainer = $('<div class="notifyContainer "  ></div>')
                     .css({
                         'position':'fixed',
                         'top':_this.setting.top+( _this.notifyContainerNum > 0 ? $('.notifyContainer:last-child').offset().top + $('.notifyContainer:last-child').height() : 0)+'px',
@@ -204,10 +204,12 @@
 
                 _this.setting.autoClose = _this.setDefaultValue(_this.setting.autoClose,autoClose);
 
+                var curNotifyContainer = _this.notifyContainer;
+
                 if(_this.setting.autoClose){
                     setTimeout(function () {
 
-                        _this.close(_this.notifyContainer);
+                        _this.close(curNotifyContainer);
 
                     },_this.setting.showDuration)
 
@@ -220,10 +222,11 @@
              */
             _this.bindCloseEvent = function(){
 
+                var curNotifyContainer = _this.notifyContainer;
 
                 _this.closeButton.click(function(){
 
-                    _this.close(_this.notifyContainer);
+                    _this.close(curNotifyContainer);
                 })
 
                 return _this;
